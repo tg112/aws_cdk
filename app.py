@@ -6,6 +6,7 @@ import aws_cdk as cdk
 from cdk_practice.cdk_practice_stack import CdkPracticeStack
 from cdk_practice.py_handler_stack import PyHandlerStack
 from cdk_practice.rest_api_stack import RestApiStack
+from cdk_practice.cloudwatch_metrics_stack import CloudWatchMetricsStack
 
 
 app = cdk.App()
@@ -28,4 +29,5 @@ app = cdk.App()
     # )
 # PyHandlerStack(app, "PyHandlerStack", starer_stack.bucket)
 RestApiStack(app, "RestApiStack")
+CloudWatchMetricsStack(app, "CloudWatchMetrics")
 app.synth()
