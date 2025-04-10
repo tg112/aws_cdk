@@ -4,10 +4,11 @@ import os
 import aws_cdk as cdk
 
 from cdk_practice.cdk_practice_stack import CdkPracticeStack
+from cdk_practice.py_handler_stack import PyHandlerStack
 
 
 app = cdk.App()
-CdkPracticeStack(app, "CdkPracticeStack",
+starer_stack = CdkPracticeStack(app, "CdkPracticeStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
@@ -24,5 +25,5 @@ CdkPracticeStack(app, "CdkPracticeStack",
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
-
+PyHandlerStack(app, "PyHandlerStack", starer_stack.bucket)
 app.synth()
