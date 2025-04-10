@@ -3,14 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from cdk_practice.cdk_practice_stack import CdkPracticeStack
-from cdk_practice.py_handler_stack import PyHandlerStack
-from cdk_practice.rest_api_stack import RestApiStack
-from cdk_practice.cloudwatch_metrics_stack import CloudWatchMetricsStack
+from web_deploy.web_deploy_stack import WebdeplStack
 
 
 app = cdk.App()
-# starer_stack = CdkPracticeStack(app, "CdkPracticeStack",
+WebdeplStack(app, "WebDeployStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
@@ -26,8 +23,6 @@ app = cdk.App()
     #env=cdk.Environment(account='123456789012', region='us-east-1'),
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
-    # )
-# PyHandlerStack(app, "PyHandlerStack", starer_stack.bucket)
-RestApiStack(app, "RestApiStack")
-CloudWatchMetricsStack(app, "CloudWatchMetrics")
+    )
+
 app.synth()
