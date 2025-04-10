@@ -3,11 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from web_deploy.web_deploy_stack import WebDeployStack
+from web_deploy.web_deploy_stack import WebdeplStack
 
 
 app = cdk.App()
-WebDeployStack(app, "WebDeployStack",
+WebdeplStack(app, "WebDeployStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
